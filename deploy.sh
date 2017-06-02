@@ -129,8 +129,9 @@ fi
 # 4. Angular Prod Build
 if [ -e "$DEPLOYMENT_TARGET/.angular-cli.json" ]; then
   cd "$DEPLOYMENT_TARGET"
-  echo "./node_modules/.bin/ng build --$DEPLOY_ENV"
-  eval "./node_modules/.bin/ng build --$DEPLOY_ENV"
+  
+  eval ./node_modules/.bin/ng build --env $DEPLOY_ENV
+  
   exitWithMessageOnError "Angular build failed"
   cd - > /dev/null
 fi
