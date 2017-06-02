@@ -28,12 +28,16 @@ exitWithMessageOnError "Missing node.js executable, please install node.js, if a
 
 SCRIPT_DIR="${BASH_SOURCE[0]%\\*}"
 echo SCRIPT_DIR
+
 SCRIPT_DIR="${SCRIPT_DIR%/*}"
-echo SCRIPT_DIR
+echo "SCRIPT_DIR:$SCRIPT_DIR"
+
 ARTIFACTS=$SCRIPT_DIR/../artifacts
-echo ARTIFACTS
+echo "ARTIFACTS:$ARTIFACTS"
+
 KUDU_SYNC_CMD=${KUDU_SYNC_CMD//\"}
-echo $DEPLOY_ENV
+
+echo "DEPLOY_ENV: $DEPLOY_ENV"
 
 if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
   DEPLOYMENT_SOURCE=$SCRIPT_DIR
@@ -125,7 +129,7 @@ fi
 # 4. Angular Prod Build
 if [ -e "$DEPLOYMENT_TARGET/.angular-cli.json" ]; then
   cd "$DEPLOYMENT_TARGET"
-  eval ./node_modules/.bin/ng build --prod
+  eval ./node_modules/.bin/ng build --$DEPLOY_ENV
   exitWithMessageOnError "Angular build failed"
   cd - > /dev/null
 fi
