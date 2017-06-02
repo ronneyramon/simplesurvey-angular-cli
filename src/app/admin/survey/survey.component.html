@@ -1,0 +1,2 @@
+<h1>{{ data?.name }}</h1>
+<survey-editor *ngIf="data" [json]="surveyJSON" (surveySaved)="onSurveySaved($event)"></survey-editor>

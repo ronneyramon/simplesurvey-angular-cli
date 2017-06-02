@@ -22,12 +22,17 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
+    "jquery": "^2.1.0",
+    "bootstrap": "^3.3.6",
+    "survey-angular": "^0.12.16",
+    "surveyjs-editor": "^0.12.16",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "1.0.6",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
+    "@types/knockout": "^3.4.40",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
