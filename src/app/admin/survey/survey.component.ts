@@ -18,6 +18,7 @@ export class SurveyComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.http.get(environment.apiUrl + '/surveys/' + params['id']).subscribe((res: Response) => {
         this.data = res.json();
+        console.log(this.data);
         this.surveyJSON = JSON.parse(this.data.surveyJSON);
       });
     });

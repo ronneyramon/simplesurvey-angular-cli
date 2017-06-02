@@ -24,6 +24,7 @@ export class SurveyComponent implements OnInit {
           this.collector = res.json();
 
           var surveyJS = new SurveyJS.ReactSurveyModel(JSON.parse(this.collector.survey.surveyJSON));
+          surveyJS.locale = 'pt';
           surveyJS.onComplete.add(this.storeResponse.bind(this));
           SurveyJS.SurveyNG.render("surveyElement", { model: surveyJS });
         });

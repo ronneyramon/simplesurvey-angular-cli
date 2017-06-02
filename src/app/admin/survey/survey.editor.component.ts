@@ -10,7 +10,8 @@ export class SurveyEditorComponent  {
     @Input() json: any;
     @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
     ngOnInit() {
-        let editorOptions = {showEmbededSurveyTab: true, generateValidJSON : true};
+        let editorOptions = {showEmbededSurveyTab: false, showJSONEditorTab:false, generateValidJSON : true};
+        
         this.editor = new SurveyEditor.SurveyEditor('surveyEditorContainer', editorOptions);
         this.editor.text = JSON.stringify(this.json);
         this.editor.saveSurveyFunc = this.saveMySurvey;
