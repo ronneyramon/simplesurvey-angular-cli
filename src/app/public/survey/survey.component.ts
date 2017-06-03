@@ -22,6 +22,7 @@ export class SurveyComponent implements OnInit {
 
         this.http.get(environment.apiUrl + '/collectors/' + params['id']).subscribe((res: Response) => {
           this.collector = res.json();
+          console.log(this.collector);
 
           var surveyJS = new SurveyJS.ReactSurveyModel(JSON.parse(this.collector.survey.surveyJSON));
           surveyJS.locale = 'pt';
