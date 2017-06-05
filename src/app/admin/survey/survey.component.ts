@@ -24,7 +24,7 @@ export class SurveyComponent implements OnInit {
   }
 
   onSurveySaved(survey) {
-    console.log(JSON.stringify(survey));
+    console.log(this.data);
     this.http.put(environment.apiUrl + '/surveys/' + this.data.id, {
       name: this.data.name,
       description: this.data.description,

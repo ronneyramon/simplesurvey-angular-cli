@@ -2,3 +2,5 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/survey-angular/survey.css';
 @import '../node_modules/surveyjs-editor/surveyeditor.css';
+@import '../node_modules/@qontu/ngx-inline-editor/themes/bootstrap.css';
+@import "../node_modules/font-awesome/css/font-awesome.css";
